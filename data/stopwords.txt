@@ -186,6 +186,8 @@ yourself
 yourselves
 you've
 alors
+a
+à
 au
 aucun
 aucuns
@@ -205,6 +207,7 @@ ci
 comme
 comment
 dans
+de
 des
 du
 dedans
