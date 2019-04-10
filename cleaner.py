@@ -2,11 +2,7 @@ import unicodedata
 import re
 import math
 import random
-from pyspark.sql import SparkSession
 import random
-# Dask imports
-import dask.bag as db
-import dask.dataframe as df
 from pyspark.sql import Row
 from pyspark.sql import DataFrame
 from pyspark.sql import SparkSession
@@ -44,8 +40,7 @@ data = newgoing.join(registered,"BN/Registration number",'full')\
         .withColumnRenamed("Program Type OP=ongoing program NP=new program NA=not active","active")\
         .withColumnRenamed("Category Code", "cat")\
         .withColumnRenamed("Website Address","site")\
-        .select("id","desc","active","cat","site")\
-        .sample(0.05, seed=666)
+        .select("id","desc","active","cat","site")
 
 extradesc = polione.join(politwo.withColumnRenamed("Description","desc2"), "BN/Registration Number", 'full')\
         .withColumnRenamed("BN/Registration Number","id")\
