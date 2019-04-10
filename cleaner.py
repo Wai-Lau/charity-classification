@@ -79,4 +79,4 @@ datardd = data.join(extradesc, "id", "left")\
         .filter(lambda x: x['cat'])\
         .filter(lambda x: x['d'])\
         .map(lambda x: {**x, 'cscat': catdict[re.sub(r'^[0]+',"",x['cat'].strip())]})\
-        .map(lambda x: {"d":x['d'], "site":x['site'], "active":x["active"], "cscat":x["cscat"], "id":x["id"]})\
+        .map(lambda x: {"d":x['d'], "site":x['site'], "active":x["active"], "cscat":x["cscat"], "cat":x['cat'], "id":x["id"]})
